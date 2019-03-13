@@ -13,10 +13,10 @@ class SleepyWorker extends QueueWorker {
     this.number = number
   }
 
-  protected async call(that: SleepyWorker) {
+  protected async call() {
     for (let i = 0; i < 5; i++) {
       await delay(100)
-      that.res.push(this.number.toString())
+      this.res.push(this.number.toString())
     }
   }
 }
