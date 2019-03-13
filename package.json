@@ -4,6 +4,7 @@
   "description": "QueueWorker class for queue lib",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "files": ["dist/*"],
   "directories": {
     "test": "test"
   },
