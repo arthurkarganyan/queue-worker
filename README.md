@@ -19,7 +19,7 @@ class HardWorker extends QueueWorker {
     super();
     this.payload = payload;
   }
-  async call(that) {
+  async call() {
     // that is this here
     // Do something with that.payload
   }
@@ -39,7 +39,7 @@ class HardWorker extends QueueWorker {
     this.payload = payload
   }
 
-  protected async call(that: HardWorker) {
+  protected async call() {
     // that is this here
     // Do something with that.payload
   }
