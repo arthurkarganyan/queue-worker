@@ -7,7 +7,7 @@ Limit number async operation with fashion. Wraps https://github.com/jessetane/qu
 First, you need to create a class that extends `QueueWorker` having `async call` method. Some payload can be used here as well.
 
 ```js
-import {QueueWorker} from "workers-pipeline"
+const {QueueWorker} = require("workers-pipeline")
 class HardWorker extends QueueWorker {
   constructor(payload) {
     super();
@@ -43,15 +43,17 @@ class HardWorker extends QueueWorker {
 Second, create a `WorkersPipeline`, passing limit of parallel promises wanted to be executed at the same time. Push workers instances to the pipeline and call `pipeline.start()`, that retures promise, when all jobs are finished.
 
 ```js
-  import {WorkersPipeline} from "workers-pipeline"
+  const {WorkersPipeline} = require("workers-pipeline")
   const pipeline = new WorkersPipeline(2)
   
-  const urlsToGet = [{url: "..."}, {url: "..."}, {url: "..."}]
-  urlsToGet.each(params => {
-      pipeline.push(new HardWorker(params))
-      pipeline.push(new HardWorker(params))
-      pipeline.push(new HardWorker(params))
-  })
+  async function main() {
+    const urlsToGet = [{url: "..."}, {url: "..."}, {url: "..."}]
+    urlsToGet.forEach(params => {
+        pipeline.push(new HardWorker(params))
+        pipeline.push(new HardWorker(params))
+        pipeline.push(new HardWorker(params))
+    })
   
-  await pipeline.start()
+    await pipeline.start()
+  }
 ```
