@@ -1,6 +1,6 @@
 # Workers Pipeline
 
-Limit number async operation with fashion.
+Limit number async operation with fashion. Wraps https://github.com/jessetane/queue library into class making it more practical to use.
 
 ## Usage
 
