@@ -1,5 +1,5 @@
 {
-  "name": "queue-worker",
+  "name": "workers-pipeline",
   "version": "0.0.1",
   "description": "QueueWorker class for queue lib",
   "main": "dist/index.js",
