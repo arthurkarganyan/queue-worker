@@ -56,8 +56,6 @@ Second, create a `WorkersPipeline`, passing limit of parallel promises wanted to
     const urlsToGet = [{url: "..."}, {url: "..."}, {url: "..."}]
     urlsToGet.forEach(params => {
         pipeline.push(new HardWorker(params))
-        pipeline.push(new HardWorker(params))
-        pipeline.push(new HardWorker(params))
     })
   
     await pipeline.start()
