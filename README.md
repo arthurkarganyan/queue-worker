@@ -2,6 +2,12 @@
 
 Limit number async operation with fashion. Wraps https://github.com/jessetane/queue library into class making it more practical to use.
 
+## Install
+
+```bash
+npm i --save workers-pipeline
+```
+
 ## Usage
 
 First, you need to create a class that extends `QueueWorker` having `async call` method. Some payload can be used here as well.
